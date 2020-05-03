@@ -10,10 +10,12 @@ const reloadData = async () => {
     dataBody.innerHTML = `Loading...`;
     const data = await (await fetch("https://covidtracking.com/api/v1/states/current.json")).json();
     const stateData = await (await fetch("https://covidtracking.com/api/v1/states/info.json")).json();
+    const statesHistorical = await (await fetch("https://covidtracking.com/api/v1/states/daily.json")).json();
     dataBody.innerHTML = ``;
     for(let state in data) {
+        const stateHistorical = statesHistorical.filter(dataItem => dataItem.state == data[state].state);
         const stateInfo = stateData.find(dataItem => dataItem.state == data[state].state)
-        tacocat.render(new DataRow({apiResult: data[state], stateInfo}), dataBody);
+        tacocat.render(new DataRow({apiResult: data[state], stateInfo, stateHistorical}), dataBody);
     }
 }
 

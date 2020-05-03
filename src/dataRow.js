@@ -19,8 +19,8 @@ export default class DataRow extends Component {
     moreInfoClicked() {
         this.popup.open();
     }
-    componentCreated() {
-        const {apiResult, stateInfo, covid19siteTitle} = this.options;
+    async componentCreated() {
+        const {apiResult, stateInfo, stateHistorical} = this.options;
         const {tag, text} = renderUtils;
         this.state = apiResult.state || "Unknown";
         this.totalTests = apiResult.totalTestResults || "Unknown";
@@ -29,6 +29,7 @@ export default class DataRow extends Component {
         this.hospitalized = apiResult.hospitalized || "Unknown";
         this.death = apiResult.death || "Unknown";
         this.covid19site = stateInfo.covid19Site || "Unknown";
+        this.curData = stateHistorical[0];
         this.popup = new MTCDialog({
             children: [
                 tag('h2', {
@@ -71,6 +72,7 @@ export default class DataRow extends Component {
                                         tag('br'),
                                         tag('b', {textContent: 'Positive: '}),
                                         text(this.positive),
+                                        text(` (+${stateHistorical[0].positiveIncrease})`),
                                         tag('br'),
                                         tag('b', {textContent: 'Negative: '}),
                                         text(this.negative)
@@ -115,7 +117,7 @@ export default class DataRow extends Component {
                                         'text-align': 'center'
                                     },
                                     children: [
-                                        text(this.death)
+                                        text(this.death + ' (+' + this.curData.deathIncrease + ')')
                                     ]
                                 })
                             ]
@@ -145,8 +147,8 @@ export default class DataRow extends Component {
             cssClasses: row,
             children: [
                 new Cell({text: this.state}),
-                new Cell({text: this.positive}),
-                new Cell({text: this.death}),
+                new Cell({text: this.positive + ' (+' + this.curData.positiveIncrease + ')'}),
+                new Cell({text: this.death + ' (+' + this.curData.deathIncrease + ')'}),
                 new Cell({
                     children: [
                         tag('button', {

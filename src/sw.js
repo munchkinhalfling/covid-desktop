@@ -7,6 +7,7 @@ if (workbox) {
 }
 
 workbox.routing.registerRoute(/source/, ({url, event}) => {
+  console.log('Someone wants the credits.');
   return Response.redirect('https://covidtracking.com', 301);
 });
 workbox.routing.registerRoute(
