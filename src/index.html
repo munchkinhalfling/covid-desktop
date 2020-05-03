@@ -36,8 +36,15 @@
     <link rel="icon" type="image/svg+xml" sizes="72x72 96x96 128x128 144x144 152x152 192x192 384x384 512x512 120x120 180x180" href="/favicon.svg">
     <link rel="apple-touch-icon" type="image/svg+xml" sizes="72x72 96x96 128x128 144x144 152x152 192x192 384x384 512x512 120x120 180x180" href="/favicon.svg">
   </head>
-  <body>
-    <div class="mdc-data-table" style="width: 100%; height: 100%;">
+  <body style="margin:0">
+    <header class="mdc-top-app-bar" style="position: sticky; position: -webkit-sticky; top:0;">
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+          <span class="mdc-top-app-bar__title">C19Track</span>
+        </section>
+      </div>
+    </header>
+    <div class="mdc-data-table" style="margin: 10px;">
       <table class="mdc-data-table__table" id="data" style="width: 100%; height: 100%;">
         <thead>
           <tr class="header-row mdc-data-table__header-row">

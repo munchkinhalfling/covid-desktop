@@ -1,10 +1,10 @@
 {
-    "name": "COVID-19 Tracker",
+    "name": "C19Track",
     "short_name": "C19Track",
     "lang": "en-US",
     "start_url": "/",
     "display": "standalone",
-    "theme_color": "white",
+    "theme_color": "rgb(98,0,238)",
     "icons": [
       {
         "src": "/favicon.svg",
