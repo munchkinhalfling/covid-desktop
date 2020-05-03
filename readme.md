@@ -1,8 +1,4 @@
 # covid-desktop
-## Note: this was published accidentally to npm, it does not work in Electron form, use [the web app](https://c19track.web.app) on a desktop Chromium-based browser.
-If you read through all of that and still want to use this as Electron, then change the bare module specifiers for 'tacocat' (this app uses import maps) to './jspm_packages/tacocat@(whatever version)/tacocat.js.
-<br/>
-'Nuff said.
-<br/>
-<br/>
-On second thought, this is the last release. Use the web app.
+## A COVID-19 tracker
+This all gets published to https://c19track.web.app, but you can host your own! Just use it as a static website at src/.
+This uses the [tacocat](https://npmjs.com/tacocat) components library. The README is currently extinct for that, but I'll get around to dealing with that soon enough.
