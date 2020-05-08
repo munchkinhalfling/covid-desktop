@@ -27,20 +27,36 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="C19Track">
     <meta name="apple-mobile-web-app-title" content="C19Track">
-    <meta name="theme-color" content="white">
-    <meta name="msapplication-navbutton-color" content="white">
+    <meta name="theme-color" content="rgb(98,0,238)">
+    <meta name="msapplication-navbutton-color" content="rgb(98,0,238)">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="msapplication-starturl" content="/">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link rel="icon" type="image/svg+xml" sizes="72x72 96x96 128x128 144x144 152x152 192x192 384x384 512x512 120x120 180x180" href="/favicon.svg">
     <link rel="apple-touch-icon" type="image/svg+xml" sizes="72x72 96x96 128x128 144x144 152x152 192x192 384x384 512x512 120x120 180x180" href="/favicon.svg">
+    <script type="importmap">
+      {
+        "imports": {
+          "/node_modules/kv-storage/dist/kv-storage-polyfill.mjs": [
+            "std:kv-storage",
+            "/node_modules/kv-storage/dist/kv-storage-polyfill.mjs"
+          ]
+        }
+      }
+      </script>
   </head>
   <body style="margin:0">
     <header class="mdc-top-app-bar" style="position: sticky; position: -webkit-sticky; top:0;">
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
           <span class="mdc-top-app-bar__title">C19Track</span>
+        </section>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+          <button class="mdc-button mdc-button--outlined hidden" style="background-color: white;" id="installButton">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label">Install</span>
+          </button>
         </section>
       </div>
     </header>
