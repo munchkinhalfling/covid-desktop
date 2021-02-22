@@ -1,63 +1,30 @@
 {
-  "name": "covid-desktop",
-  "productName": "covid-desktop",
-  "version": "94623.3865.43215",
-  "description": "A COVID-19 tracker. Not a very good one, though.",
-  "main": "src/index.js",
+  "name": "c19track",
+  "version": "1.0.0",
+  "description": "A COVID-19 tracker",
+  "main": "index.js",
   "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": {
-    "name": "munchkinhalfling",
-    "email": "munchkinhalfling@pm.me"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aleksrutins/c19track.git"
   },
-  "license": "MIT",
-  "config": {
-    "forge": {
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "covid_desktop"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-dmg",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
-        }
-      ]
-    }
+  "keywords": [
+    "covid",
+    "tracker",
+    "webapp"
+  ],
+  "author": "Aleks Rutins",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/aleksrutins/c19track/issues"
   },
+  "homepage": "https://github.com/aleksrutins/c19track#readme",
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
-  },
-  "devDependencies": {
-    "@electron-forge/cli": "6.0.0-beta.50",
-    "@electron-forge/maker-deb": "6.0.0-beta.50",
-    "@electron-forge/maker-dmg": "^6.0.0-beta.51",
-    "@electron-forge/maker-rpm": "6.0.0-beta.50",
-    "@electron-forge/maker-squirrel": "6.0.0-beta.50",
-    "@electron-forge/maker-zip": "6.0.0-beta.50",
-    "electron": "8.2.4"
+    "react": "^17.0.1",
+    "react-bootstrap": "^1.5.0",
+    "react-dom": "^17.0.1",
+    "snowpack": "^3.0.11"
   }
 }
